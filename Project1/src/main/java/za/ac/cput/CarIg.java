@@ -1,8 +1,9 @@
 /*
+*Group 19
 * Keallan Saunders 219169357
-* SECTION A :::::: SMALL TDD Program
+* SECTION B :::::: SMALL TDD Program
 * 30 March 2022
-* CarIg.java   +   CarIgTest
+* CarIg.java   +   CarIgTest.java
 * ADP3 ASSIGNMENT 1
 * */
 
