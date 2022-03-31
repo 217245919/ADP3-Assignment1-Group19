@@ -11,11 +11,17 @@
 package za.ac.cput;
 
 public class CarIg {
-    public double getIgon() {
-        return 0;
-    }
+    private String sname;
+    private boolean boost = true;
 
-    public double getIgOff() {
-        return 5;
+    public CarIg(String sname){
+        this.sname= sname;
+    }
+    public String getSname(){
+        return sname;
+    }
+    public boolean Boosting(){
+
+        return boost;
     }
 }
