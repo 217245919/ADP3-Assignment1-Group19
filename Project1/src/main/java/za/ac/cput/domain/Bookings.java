@@ -5,8 +5,6 @@ DD: 10 APRIL 2022
 Bookings.java
 **************** DO NOT TOUCH ********************
  */
-
-
 package za.ac.cput.domain;
 
 import java.util.Date;
@@ -18,9 +16,7 @@ public class Bookings {
     private String time;
     private String branchId;
     private String customerId;
-
-
-    //Private constructors
+    //////////////////////Private constructors
     private Bookings(Builder builder){
         this.bookingId = builder.bookingId;
         this.date = builder.date;
@@ -31,26 +27,17 @@ public class Bookings {
 
     //Getters and Setters
     public String getBookingId() {return bookingId;}
-
     public void setBookingId(String bookingId) {this.bookingId = bookingId;}
-
     public Date getDate() {return date;}
-
     public void setDate(Date date) {this.date = date;}
-
     public String getTime() {return time;}
-
     public void setTime(String time) {this.time = time;}
-
     public String getBranchId() {return branchId;}
-
     public void setBranchId(String branchId) {this.branchId = branchId;}
-
     public String getCustomerId() {return customerId;}
-
     public void setCustomerId(String customerId) {this.customerId = customerId;}
 
-// To String
+//////////////////////////////// To String
     @Override
     public String toString() {
         return "Bookings{" +
@@ -62,7 +49,7 @@ public class Bookings {
                 '}';
     }
 
-
+//////////////////////////////Builder Set
     public static class Builder{
         private String bookingId;
         private Date date;
