@@ -1,4 +1,9 @@
 package za.ac.cput.repository;
 
-public class IRepository {
+public interface IRepository {
+    void create();
+    void read();
+    void update();
+    boolean delete();
+
 }
