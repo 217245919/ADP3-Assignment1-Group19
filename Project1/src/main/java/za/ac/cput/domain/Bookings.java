@@ -8,11 +8,10 @@ Bookings.java
 package za.ac.cput.domain;
 
 import java.util.Date;
-import java.util.Timer;
 
 public class Bookings {
     private String bookingId;
-    private Date date;
+    private String date;
     private String time;
     private String branchId;
     private String customerId;
@@ -28,8 +27,8 @@ public class Bookings {
     //Getters and Setters
     public String getBookingId() {return bookingId;}
     public void setBookingId(String bookingId) {this.bookingId = bookingId;}
-    public Date getDate() {return date;}
-    public void setDate(Date date) {this.date = date;}
+    public String getDate() {return date;}
+    public void setDate(String date) {this.date = date;}
     public String getTime() {return time;}
     public void setTime(String time) {this.time = time;}
     public String getBranchId() {return branchId;}
@@ -52,7 +51,7 @@ public class Bookings {
 //////////////////////////////Builder Set
     public static class Builder{
         private String bookingId;
-        private Date date;
+        private String date;
         private String time;
         private String branchId;
         private String customerId;
@@ -62,7 +61,7 @@ public class Bookings {
             return this;
         }
 
-        public Builder setDate(Date date){
+        public Builder setDate(String date){
             this.date = date;
             return this;
         }
@@ -89,3 +88,5 @@ public class Bookings {
         public Bookings build(){return new Bookings(this);}
     }
 }
+
+//////////////////////////////////////END
