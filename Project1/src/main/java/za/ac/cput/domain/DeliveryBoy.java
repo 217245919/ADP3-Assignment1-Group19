@@ -29,11 +29,12 @@ public class DeliveryBoy {
     // To String
     @Override
     public String toString() {
-        return 
-                "Deliver boy Id is: " + this.delivBId + "'\'" +
-                "Delivery Boy Name and Surname: =" + this.delivBFname +
-                " " + this.delivBSname + '\'' +
-                "Delivery Boy cell number :" + this.delivBCellNr'\'';
+        return "DeliveryBoy{"+
+                "delivBId='" + delivBId + '\'' +
+                ", delivBFname="+ delivBFname +
+                ", delivBSname='" + delivBSname '\'' +
+                ", delivBCellNr = '"+ delivBCellNr'\''
+                '}';
     }
 
     //Builder Set
@@ -53,7 +54,7 @@ public class DeliveryBoy {
             return this;}
        
         private Builder copy(DeliveryBoy dBoy){
-            this.delivBID = dBoy.delivBId;
+            this.delivBId = dBoy.delivBId;
             this.delivBFname = dBoy.delivBFname;
             this.delivBSname = dBoy.delivBSname;
             this.delivBCellNr= dBoy.delivBCellNr;

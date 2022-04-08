@@ -7,5 +7,17 @@ DeliveryBoyFactory.java
  */
 package za.ac.cput.factory;
 
+import za.ac.cput.domain.DeliveryBoy;
+
+
 public class DeliveryBoyFactory {
+    public static DeliveryBoy createDeliveryBoy(String delivBId, String delivBFname, String delivBSname, String delivBCellNr){
+        DeliveryBoy deliveryBoy= new DeliveryBoy.Builder()
+                .setDelivBId(delivBId)
+		.setDelivBFname(delivBFname)
+                .setDelivBSname(delivBSname)
+                .setDelivBCellNr(delivBCellNr)
+                .build();
+        return deliveryBoy;
+    }
 }
