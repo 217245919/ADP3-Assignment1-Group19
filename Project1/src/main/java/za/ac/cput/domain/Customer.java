@@ -8,25 +8,25 @@ package za.ac.cput.domain;
  */
 public class Customer {
 
-    private int cusId;
+    private String cusId;
     private String firstname;
     private String lastname;
     private String address;
     private int cellnr;
 
     private Customer(Builder builder) {
-        this.cusId = builder.cellnr;
+        this.cusId = builder.cusId;
         this.firstname = builder.firstname;
         this.lastname = builder.lastname;
         this.address = builder.address;
         this.cellnr = builder.cellnr;
     }
 
-    public int getCusId() {
+    public String getCusId() {
         return cusId;
     }
 
-    public void setCusId(int cusId) {
+    public void setCusId(String cusId) {
         this.cusId = cusId;
     }
 
@@ -75,13 +75,13 @@ public class Customer {
 
     public static class Builder {
 
-        private int cusId;
+        private String cusId;
         private String firstname;
         private String lastname;
         private String address;
         private int cellnr;
 
-        public Builder setCusId(int cusId) {
+        public Builder setCusId(String cusId) {
             this.cusId = cusId;
             return this;
         }
