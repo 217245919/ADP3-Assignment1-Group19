@@ -9,6 +9,7 @@ public class CarDelivery {
    //Private constructors
     private CarDelivery(Builder builder){
         this.delivBId = builder.delivBId;
+        this.carDelivId = builder.carDelivId;
         this.customerId = builder.customerId;
     }
 
