@@ -4,7 +4,7 @@ import za.ac.cput.domain.Car;
 
 public class CarFactory {
 
-    public static Car createCar(int carRegId, String carModel, String carColour){
+    public static Car createCar(String carRegId, String carModel, String carColour){
 
         Car car = new Car.Builder()
                 .setCarRegId(carRegId)
