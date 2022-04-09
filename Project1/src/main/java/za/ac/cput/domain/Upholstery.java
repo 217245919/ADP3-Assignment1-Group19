@@ -9,7 +9,7 @@ package za.ac.cput.domain;
 
 public class Upholstery {
 
-    private int upholsteryId;
+    private String upholsteryId;
     private String upholstItem;
     private String upholstMaterial;
     private String upholstColour;
@@ -22,11 +22,11 @@ public class Upholstery {
 
     }
 
-    public int getUpholsteryId() {
+    public String getUpholsteryId() {
         return upholsteryId;
     }
 
-    public void setUpholsteryId(int upholsteryId) {
+    public void setUpholsteryId(String upholsteryId) {
         this.upholsteryId = upholsteryId;
     }
 
@@ -66,12 +66,12 @@ public class Upholstery {
 
     public static class Builder {
 
-        private int upholsteryId;
+        private String upholsteryId;
         private String upholstItem;
         private String upholstMaterial;
         private String upholstColour;
 
-        public Builder setUpholsteryId(int upholsteryId) {
+        public Builder setUpholsteryId(String upholsteryId) {
             this.upholsteryId = upholsteryId;
             return this;
         }
