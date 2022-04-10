@@ -8,15 +8,20 @@ package za.ac.cput.repository;
  */
 
 import za.ac.cput.domain.Customer;
+import za.ac.cput.domain.Payment;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class CustomerRepository implements ICustomerRepository {
 
     private static CustomerRepository repository = null;
     private Set<Customer> cusDB = null;
+    private CustomerRepository() {
+        cusDB = new HashSet<Customer>();
+    }
 
-    private static CustomerRepository getRepository() {
+    public static CustomerRepository getRepository() {
 
         if (repository == null) {
             repository = new CustomerRepository();
