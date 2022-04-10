@@ -1,5 +1,11 @@
 package za.ac.cput.domain;
 
+/* Administrator.java
+ Entity for the Administrator
+ Author: Tyler Yorke Fredericks (218047894)
+ Date: 10 April 2022
+*/
+
 public class Administrator {
 
     private String adminId;

@@ -1,13 +1,21 @@
 package za.ac.cput.repository;
 
+/* ServiceRepository.java
+ Entity for the ServiceRepository
+ Author: Tyler Yorke Fredericks (218047894)
+ Date: 10 April 2022
+*/
+
 import za.ac.cput.domain.Service;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class ServiceRepository implements IServiceRepository{
 
     private static ServiceRepository repository = null;
     private Set<Service> serviceDB = null;
+    public ServiceRepository() { serviceDB = new HashSet<Service>();}
 
     static ServiceRepository getRepository() {
 
@@ -20,7 +28,8 @@ public class ServiceRepository implements IServiceRepository{
     @Override
     public Service create(Service service) {
         boolean created = serviceDB.add(service);
-        if (!created) return null;
+        if (!created)
+            return null;
         return service;
     }
 

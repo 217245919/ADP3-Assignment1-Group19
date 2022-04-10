@@ -1,5 +1,11 @@
 package za.ac.cput.repository;
 
+/* AdministratorRepositoryTest.java
+ Entity for the AdministratorRepositoryTest
+ Author: Tyler Yorke Fredericks (218047894)
+ Date: 10 April 2022
+*/
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -11,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 
-class AdministratorRepositoryTest {
+public class AdministratorRepositoryTest {
     private static AdministratorRepository repository = AdministratorRepository.getRepository();
     private static Administrator administrator = AdministratorFactory.createAdministrator("A102", "John", "Smith");
 

@@ -1,5 +1,11 @@
 package za.ac.cput.repository;
 
+/* ServiceRepositoryTest.java
+ Entity for the ServiceRepositoryTest
+ Author: Tyler Yorke Fredericks (218047894)
+ Date: 10 April 2022
+*/
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -12,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 
-class ServiceRepositoryTest {
+public class ServiceRepositoryTest {
     private static ServiceRepository repository = ServiceRepository.getRepository();
     private static Service service = ServiceFactory.createService("S102", "Minimal Package", "Package contains a simple exterior wash to vehicle.");
 
