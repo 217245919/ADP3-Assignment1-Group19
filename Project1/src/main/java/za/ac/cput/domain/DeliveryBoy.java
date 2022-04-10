@@ -7,7 +7,7 @@ public class DeliveryBoy {
     private String delivBSname;
     private String delivBCellNr;
 
-   //Private constructors
+    //Private constructors
     private DeliveryBoy(Builder builder){
         this.delivBId = builder.delivBId;
         this.delivBFname = builder.delivBFname;
@@ -22,9 +22,14 @@ public class DeliveryBoy {
     public void setDelivBfname(String name) {this.delivBFname=name;}
     public String getDelivBSname() {return this.delivBSname;}
     public String getDelivBCellNr() {return this.delivBCellNr;}
+
     public void setDelivBsname(String surname) {this.delivBSname=surname;}
     public void setdelivBCellNr(String cellNr) {this.delivBCellNr=cellNr;}
-   
+    public void setDelivBFname(String name) {this.delivBFname=name;}
+    public void setDelivBSname(String surname) {this.delivBSname=surname;}
+    public void setDelivBCellNr(String cellNr) {this.delivBCellNr=cellNr;}
+
+
 
     // To String
 
@@ -36,8 +41,10 @@ public class DeliveryBoy {
 
                 ", delivBFname="+ delivBFname + '\'' +
                 ", delivBSname='" + delivBSname + '\'' +
-                ", delivBCellNr='"+ delivBCellNr + '\'' ;
-      }
+                ", delivBCellNr='"+ delivBCellNr + '\'' +
+        '}';
+    }
+
 
     //Builder Set
     public static class Builder{
@@ -54,8 +61,8 @@ public class DeliveryBoy {
             return this;}
         public Builder setDelivBCellNr(String cellNr) {this.delivBCellNr=cellNr;
             return this;}
-       
-        private Builder copy(DeliveryBoy dBoy){
+
+        public Builder copy(DeliveryBoy dBoy){
             this.delivBId = dBoy.delivBId;
             this.delivBFname = dBoy.delivBFname;
             this.delivBSname = dBoy.delivBSname;
