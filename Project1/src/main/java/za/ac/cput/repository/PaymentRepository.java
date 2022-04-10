@@ -16,7 +16,7 @@ public class PaymentRepository implements IPaymentRepository {
     private static PaymentRepository repository = null;
     private Set<Payment> paymentDB = null;
 
-    private static PaymentRepository getRepository() {
+    public static PaymentRepository getRepository() {
 
         if (repository == null) {
             repository = new PaymentRepository();

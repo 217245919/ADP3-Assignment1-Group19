@@ -16,7 +16,7 @@ public class CustomerRepository implements ICustomerRepository {
     private static CustomerRepository repository = null;
     private Set<Customer> cusDB = null;
 
-    private static CustomerRepository getRepository() {
+    public static CustomerRepository getRepository() {
 
         if (repository == null) {
             repository = new CustomerRepository();
