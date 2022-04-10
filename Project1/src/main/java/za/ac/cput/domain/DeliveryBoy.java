@@ -22,9 +22,8 @@ public class DeliveryBoy {
     public void setDelivBfname(String name) {this.delivBFname=name;}
     public String getDelivBSname() {return this.delivBSname;}
     public String getDelivBCellNr() {return this.delivBCellNr;}
-    public void setDelivBfname(String name) {this.delivBFname=name;}
     public void setDelivBsname(String surname) {this.delivBSname=surname;}
-    public void setDelivBfname(String cellNr) {this.delivBcCellNr=cellNr;}
+    public void setdelivBCellNr(String cellNr) {this.delivBCellNr=cellNr;}
    
 
     // To String
@@ -37,7 +36,7 @@ public class DeliveryBoy {
 
                 ", delivBFname="+ delivBFname + '\'' +
                 ", delivBSname='" + delivBSname + '\'' +
-                ", delivBCellNr='"+ delivBCellNr + '\'' +
+                ", delivBCellNr='"+ delivBCellNr + '\'' ;
       }
 
     //Builder Set
