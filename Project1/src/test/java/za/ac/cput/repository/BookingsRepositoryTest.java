@@ -27,7 +27,9 @@ class BookingsRepositoryTest {
     void a_create() {
         Bookings created = repository.create(bookings);
         assertEquals(bookings.getBookingId(), created.getBookingId());
+        System.out.println("Creating Booking Details Below:");
         System.out.println("Create: " + created);
+        System.out.println("==================================");
     }
 
     /////////////Read
@@ -36,7 +38,9 @@ class BookingsRepositoryTest {
         Bookings read = repository.read(bookings.getBookingId());
         Assertions.assertEquals(bookings.getBookingId(), read.getBookingId());
         // assertNotNull(read);
+        System.out.println("Displaying Booking Details Below");
         System.out.println("Read: " + read);
+        System.out.println("==================================");
     }
 
     ////////////Update
@@ -46,22 +50,27 @@ class BookingsRepositoryTest {
                 .setTime("11:00 AM")
                 .build();
         assertNotNull(repository.update(updated));
+        System.out.println("Display updated Booking Details of Date + Time");
         System.out.println("Updated: " + updated);
+        System.out.println("==================================");
     }
 
     ////////////Delete
     @Test
     void e_delete() {
-        boolean success = repository.delete(bookings.getBookingId());
-        assertTrue(success);
+        boolean working = repository.delete(bookings.getBookingId());
+        assertTrue(working);
+        System.out.println("Deleting the Booking Below:");
         System.out.println("Deleted: " + bookings);
+        System.out.println("==================================");
     }
 
     ////////////GetAll
     @Test
     void d_getAll() {
-        System.out.println("Show all: ");
+        System.out.println("Display All Bookings: ");
         System.out.println(repository.getAll());
+        System.out.println("===================================");
     }
 
 }
