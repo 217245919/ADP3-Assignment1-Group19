@@ -9,7 +9,7 @@ import za.ac.cput.factory.DeliveryBoyFactory;
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 
-public class CarRepositoryTest {
+public class DeliveryBoyRepositoryTest {
     private static DeliveryBoyRepository repository = DeliveryBoyRepository.getRepository();
     private static DeliveryBoy deliveryBoy = DeliveryBoyFactory.createDeliveryBoy("123456", "Jake", "Evens","091 898 9765");
     @Test
