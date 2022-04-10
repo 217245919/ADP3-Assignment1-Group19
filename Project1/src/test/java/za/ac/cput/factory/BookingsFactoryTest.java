@@ -7,8 +7,17 @@ BookingsFactoryTest.java
  */
 package za.ac.cput.factory;
 
+import org.junit.jupiter.api.Test;
+import za.ac.cput.domain.Bookings;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookingsFactoryTest {
+    @Test
+    void createBooking(){
+        Bookings bookings = BookingsFactory.createBookings("14 April 2022", "14:00 PM");
+        assertNotNull(bookings);
+        System.out.println(bookings);
 
+    }
 }
