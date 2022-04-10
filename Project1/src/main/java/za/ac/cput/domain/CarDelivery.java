@@ -9,6 +9,7 @@ public class CarDelivery {
    //Private constructors
     private CarDelivery(Builder builder){
         this.delivBId = builder.delivBId;
+        this.carDelivId = builder.carDelivId;
         this.customerId = builder.customerId;
     }
 
@@ -24,12 +25,12 @@ public class CarDelivery {
 
     @Override
     public String toString() {
-        return "CarDelivery{" +
-                "carDelivId='" + carDelivId + '\'' +
-                ", delivBId='" + delivBId + '\'' +
-                ", customerId='" + customerId + '\'' +
-                '}';
-    }
+        return  "CarDelivery{"+
+        "delivBId='" + delivBId + '\'' +
+        ", carDelivId='" + carDelivId + '\'' +
+        ", customerId='"+ customerId + '\'' +
+        '}';
+}
 
 
     //Builder Set

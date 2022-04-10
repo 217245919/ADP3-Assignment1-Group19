@@ -34,11 +34,11 @@ public class DeliveryBoy {
     public String toString() {
         return "DeliveryBoy{" +
                 "delivBId='" + delivBId + '\'' +
-                ", delivBFname='" + delivBFname + '\'' +
+
+                ", delivBFname="+ delivBFname + '\'' +
                 ", delivBSname='" + delivBSname + '\'' +
-                ", delivBCellNr='" + delivBCellNr + '\'' +
-                '}';
-    }
+                ", delivBCellNr='"+ delivBCellNr + '\'' +
+      }
 
     //Builder Set
     public static class Builder{

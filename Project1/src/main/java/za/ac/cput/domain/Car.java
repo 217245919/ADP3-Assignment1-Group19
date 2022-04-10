@@ -9,7 +9,7 @@ package za.ac.cput.domain;
 
 public class Car {
 
-    private int carRegId;
+    private String carRegId;
     private String carModel;
     private String carColour;
 
@@ -20,11 +20,11 @@ public class Car {
 
     }
 
-    public int getCarRegId(){
+    public String getCarRegId(){
         return carRegId;
     }
 
-    public void setCarRegId(int carRegId){
+    public void setCarRegId(String carRegId){
         this.carRegId = carRegId;
     }
 
@@ -55,11 +55,11 @@ public class Car {
 
     public static class Builder {
 
-        private int carRegId;
+        private String carRegId;
         private String carModel;
         private String carColour;
 
-        public Builder setCarRegId(int carRegId) {
+        public Builder setCarRegId(String carRegId) {
             this.carRegId = carRegId;
             return this;
         }
