@@ -23,11 +23,12 @@ public class CarDelivery {
     // To String
     @Override
     public String toString() {
-        return 
-                "Deliver boy Id is: " + this.delivBId + "'\'" +
-                "Car Delivery ID: =" + this.carDelivId + '\'' +
-                "Customer ID :" + this.customerId + '\'';
-    }
+        return  "CarDeliver{y"+
+        "delivBId='" + delivBId + '\'' +
+        ", carDelivId='" + carDelivId '\'' +
+        ", customerId = '"+ customerId'\''
+        '}';
+}
 
     //Builder Set
     public static class Builder{
