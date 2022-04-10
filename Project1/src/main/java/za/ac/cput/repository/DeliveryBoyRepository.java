@@ -7,6 +7,7 @@ package za.ac.cput.repository;
  */
 
 import za.ac.cput.domain.DeliveryBoy;
+import za.ac.cput.domain.Upholstery;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -39,11 +40,11 @@ public class DeliveryBoyRepository implements IDeliveryBoyRepository{
 
     @Override
     public DeliveryBoy read(String delivBId) {
-        DeliveryBoy deliveryBoy = deliveries.stream()
-                .filter(d -> d.getDelivBId().equals(delivBId))
-                .findAny()
-                .orElse(null);
-        return deliveryBoy;
+        for (DeliveryBoy D : deliveries)
+            if(D.getDelivBId().equals(delivBId)){
+                return D;
+            }
+        return null;
     }
 
     @Override
