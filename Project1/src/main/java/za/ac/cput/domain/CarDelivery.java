@@ -1,5 +1,12 @@
 package za.ac.cput.domain;
 
+/*
+    CarDelivery.java
+    Entity for the Upholstery
+    Mogammad-Redar Behardien 216234107
+    10 April 2022
+ */
+
 
 public class CarDelivery {
     private String carDelivId;
