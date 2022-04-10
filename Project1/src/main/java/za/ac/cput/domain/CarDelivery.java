@@ -26,20 +26,11 @@ public class CarDelivery {
     @Override
     public String toString() {
         return  "CarDelivery{"+
-<<<<<<< Updated upstream
         "delivBId='" + delivBId + '\'' +
         ", carDelivId='" + carDelivId + '\'' +
         ", customerId='"+ customerId + '\'' +
         '}';
 }
-=======
-                "delivBId='" + delivBId + '\'' +
-                ", carDelivId='" + carDelivId + '\'' +
-                ", customerId='"+ customerId + '\'' +
-                '}';
-    }
-
->>>>>>> Stashed changes
 
 
     //Builder Set

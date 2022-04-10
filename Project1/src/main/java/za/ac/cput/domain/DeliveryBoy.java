@@ -22,9 +22,13 @@ public class DeliveryBoy {
     public void setDelivBfname(String name) {this.delivBFname=name;}
     public String getDelivBSname() {return this.delivBSname;}
     public String getDelivBCellNr() {return this.delivBCellNr;}
+
+    public void setDelivBsname(String surname) {this.delivBSname=surname;}
+    public void setdelivBCellNr(String cellNr) {this.delivBCellNr=cellNr;}
     public void setDelivBFname(String name) {this.delivBFname=name;}
     public void setDelivBSname(String surname) {this.delivBSname=surname;}
     public void setDelivBCellNr(String cellNr) {this.delivBCellNr=cellNr;}
+
 
 
     // To String
@@ -38,12 +42,9 @@ public class DeliveryBoy {
                 ", delivBFname="+ delivBFname + '\'' +
                 ", delivBSname='" + delivBSname + '\'' +
                 ", delivBCellNr='"+ delivBCellNr + '\'' +
-<<<<<<< Updated upstream
-      }
-=======
-                '}';
+        '}';
     }
->>>>>>> Stashed changes
+
 
     //Builder Set
     public static class Builder{

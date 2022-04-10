@@ -13,7 +13,7 @@ import java.util.Set;
 
 public class BookingsRepository implements IBookingsRepository{
     private static BookingsRepository repository = null;
-    private Set<Bookings> cwashDB = null;
+    private Set<Bookings> cwashDB1 = null;
 
 
     ///////////////////// Perform Singleton
@@ -23,14 +23,12 @@ public class BookingsRepository implements IBookingsRepository{
         }
         return repository;
     }
-
-
     ///////////////////////////Overide Methods
 
 
     @Override
     public  Bookings create(Bookings bookings) {
-        boolean working = cwashDB.add(bookings);
+        boolean working = cwashDB1.add(bookings);
         if (!working) {
             return null;
         }
@@ -39,7 +37,7 @@ public class BookingsRepository implements IBookingsRepository{
 
     @Override
     public Bookings read(String bookingId) {
-        Bookings bookings = cwashDB.stream()
+        Bookings bookings = cwashDB1.stream()
                 .filter(b -> b.getBookingId().equals(bookingId))
                 .findAny()
                 .orElse(null);
@@ -49,8 +47,8 @@ public class BookingsRepository implements IBookingsRepository{
     @Override
     public Bookings update(Bookings bookings) {Bookings oldBooking = read(bookings.getBookingId());
         if(oldBooking != null){
-            cwashDB.remove(oldBooking);
-            cwashDB.remove(bookings);
+            cwashDB1.remove(oldBooking);
+            cwashDB1.remove(bookings);
             return bookings;
         }
        return null;
@@ -59,9 +57,9 @@ public class BookingsRepository implements IBookingsRepository{
     @Override
     public boolean delete(String bookingId) {Bookings IdToDelete = read(bookingId);
         if(IdToDelete == null) return false;
-        cwashDB.remove(IdToDelete);return true;
+        cwashDB1.remove(IdToDelete);return true;
     }
 
     @Override
-    public Set<Bookings> getAll() {return cwashDB;}
+    public Set<Bookings> getAll() {return cwashDB1;}
 }
