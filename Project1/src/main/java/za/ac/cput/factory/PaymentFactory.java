@@ -17,7 +17,6 @@ public class PaymentFactory {
         String paymentId = Helper.generateId();
         Payment payment = new Payment.Builder().setPaymentId(paymentId)
                 .setTotalAmount(totalAmount)
-                .setDate(date)
                 .build();
         return payment;
     }
