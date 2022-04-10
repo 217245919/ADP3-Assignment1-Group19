@@ -1,16 +1,23 @@
 package za.ac.cput.repository;
 
+/* AdministratorRepository.java
+ Entity for the AdministratorRepository
+ Author: Tyler Yorke Fredericks (218047894)
+ Date: 10 April 2022
+*/
+
 import za.ac.cput.domain.Administrator;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class AdministratorRepository implements IAdministratorRepository{
 
     private static AdministratorRepository repository = null;
     private Set<Administrator> adminDB = null;
+    public AdministratorRepository() { adminDB = new HashSet<Administrator>();}
 
     static AdministratorRepository getRepository() {
-
         if (repository == null) {
             repository = new AdministratorRepository();
         }

@@ -1,4 +1,11 @@
 package za.ac.cput.domain;
+/*
+    DeliveryBoy.java
+    Entity for the Upholstery
+    Mogammad-Redar Behardien 216234107
+    10 April 2022
+ */
+
 
 
 public class DeliveryBoy {
@@ -16,15 +23,11 @@ public class DeliveryBoy {
     }
 
     //Getters and Setters
+    public String getDelivBFname() {return this.delivBFname;}
+    public String getDelivBSname() {return this.delivBSname;}
     public String getDelivBId() {return this.delivBId;}
     public void setDelivBId(String ID) {this.delivBId = ID;}
-    public String getDelivBFname() {return this.delivBFname;}
-    public void setDelivBfname(String name) {this.delivBFname=name;}
-    public String getDelivBSname() {return this.delivBSname;}
     public String getDelivBCellNr() {return this.delivBCellNr;}
-
-    public void setDelivBsname(String surname) {this.delivBSname=surname;}
-    public void setdelivBCellNr(String cellNr) {this.delivBCellNr=cellNr;}
     public void setDelivBFname(String name) {this.delivBFname=name;}
     public void setDelivBSname(String surname) {this.delivBSname=surname;}
     public void setDelivBCellNr(String cellNr) {this.delivBCellNr=cellNr;}

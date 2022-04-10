@@ -1,5 +1,11 @@
 package za.ac.cput.domain;
 
+/* Service.java
+ Entity for the Service
+ Author: Tyler Yorke Fredericks (218047894)
+ Date: 10 April 2022
+*/
+
 public class Service {
 
     private String serviceId;

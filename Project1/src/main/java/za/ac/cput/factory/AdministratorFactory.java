@@ -1,5 +1,11 @@
 package za.ac.cput.factory;
 
+/* AdministratorFactory.java
+ Entity for the AdministratorFactory
+ Author: Tyler Yorke Fredericks (218047894)
+ Date: 10 April 2022
+*/
+
 import za.ac.cput.domain.Administrator;
 
 public class AdministratorFactory {
