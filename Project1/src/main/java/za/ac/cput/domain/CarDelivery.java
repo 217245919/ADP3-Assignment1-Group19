@@ -24,10 +24,10 @@ public class CarDelivery {
     // To String
     @Override
     public String toString() {
-        return  "CarDeliver{y"+
+        return  "CarDelivery{"+
         "delivBId='" + delivBId + '\'' +
-        ", carDelivId='" + carDelivId '\'' +
-        ", customerId = '"+ customerId'\''
+        ", carDelivId='" + carDelivId + '\'' +
+        ", customerId='"+ customerId + '\'' +
         '}';
 }
 

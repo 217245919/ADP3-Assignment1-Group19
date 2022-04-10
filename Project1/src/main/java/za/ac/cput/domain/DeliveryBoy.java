@@ -31,9 +31,9 @@ public class DeliveryBoy {
     public String toString() {
         return "DeliveryBoy{"+
                 "delivBId='" + delivBId + '\'' +
-                ", delivBFname="+ delivBFname +
-                ", delivBSname='" + delivBSname '\'' +
-                ", delivBCellNr = '"+ delivBCellNr'\''
+                ", delivBFname="+ delivBFname + '\'' +
+                ", delivBSname='" + delivBSname + '\'' +
+                ", delivBCellNr='"+ delivBCellNr + '\'' +
                 '}';
     }
 
