@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BookingsFactoryTest {
     @Test
     void createBooking(){
-        Bookings bookings = BookingsFactory.createBookings("14 April 2022", "14:00 PM");
+        Bookings bookings = BookingsFactory.createBookings("23 April 2022", "18:00 PM");
         assertNotNull(bookings);
         System.out.println(bookings);
 
