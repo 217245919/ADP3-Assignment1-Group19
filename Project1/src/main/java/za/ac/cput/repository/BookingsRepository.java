@@ -9,14 +9,17 @@ package za.ac.cput.repository;
 
 import za.ac.cput.domain.Bookings;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class BookingsRepository implements IBookingsRepository{
     private static BookingsRepository repository = null;
-    private Set<Bookings> cwashDB1 = null;
+    private Set<Bookings> bookingDb = null;
 
 
     ///////////////////// Perform Singleton
+    private BookingsRepository(){bookingDb = new HashSet<Bookings>();}
+    ///////
     public static BookingsRepository getRepository() {
         if (repository == null) {
             repository = new BookingsRepository();
@@ -28,16 +31,14 @@ public class BookingsRepository implements IBookingsRepository{
 
     @Override
     public  Bookings create(Bookings bookings) {
-        boolean working = cwashDB1.add(bookings);
-        if (!working) {
-            return null;
-        }
+        boolean working = bookingDb.add(bookings);
+        if (!working) {return null;}
         return bookings;
     }
 
     @Override
     public Bookings read(String bookingId) {
-        Bookings bookings = cwashDB1.stream()
+        Bookings bookings = bookingDb.stream()
                 .filter(b -> b.getBookingId().equals(bookingId))
                 .findAny()
                 .orElse(null);
@@ -47,19 +48,22 @@ public class BookingsRepository implements IBookingsRepository{
     @Override
     public Bookings update(Bookings bookings) {Bookings oldBooking = read(bookings.getBookingId());
         if(oldBooking != null){
-            cwashDB1.remove(oldBooking);
-            cwashDB1.remove(bookings);
+            bookingDb.remove(oldBooking);
+            bookingDb.remove(bookings);
             return bookings;
         }
        return null;
     }
 
     @Override
-    public boolean delete(String bookingId) {Bookings IdToDelete = read(bookingId);
-        if(IdToDelete == null) return false;
-        cwashDB1.remove(IdToDelete);return true;
+    public boolean delete(String bookingId)
+    {Bookings ToDelete = read(bookingId);
+        if(ToDelete == null)
+            return false;
+        bookingDb.remove(ToDelete);
+        return true;
     }
 
     @Override
-    public Set<Bookings> getAll() {return cwashDB1;}
+    public Set<Bookings> getAll() { return bookingDb; }
 }
