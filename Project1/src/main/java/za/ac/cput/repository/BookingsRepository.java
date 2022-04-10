@@ -56,8 +56,8 @@ public class BookingsRepository implements IBookingsRepository{
     }
 
     @Override
-    public boolean delete(String bookingId)
-    {Bookings ToDelete = read(bookingId);
+    public boolean delete(String bookingId) {
+        Bookings ToDelete = read(bookingId);
         if(ToDelete == null)
             return false;
         bookingDb.remove(ToDelete);
