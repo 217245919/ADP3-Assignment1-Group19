@@ -6,7 +6,7 @@ public class Service {
     private String servicePkg;
     private String serviceDesc;
 
-    private Service(Service.Builder builder) {
+    private Service(Builder builder) {
         this.serviceId = builder.serviceId;
         this.servicePkg = builder.servicePkg;
         this.serviceDesc = builder.serviceDesc;
