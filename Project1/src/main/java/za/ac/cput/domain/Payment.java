@@ -7,13 +7,11 @@ package za.ac.cput.domain;
   10 April 2022
  */
 
-import java.util.Date;
-
 public class Payment {
 
     private String paymentId;
     private int totalAmount;
-    private Date date;
+    private String date;
 
     private Payment(Builder builder) {
         this.paymentId = builder.paymentId;
@@ -38,11 +36,11 @@ public class Payment {
         this.totalAmount = totalAmount;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -59,7 +57,7 @@ public class Payment {
 
         private String paymentId;
         private int totalAmount;
-        private Date date;
+        private String date;
 
         public Builder setPaymentId(String paymentId) {
             this.paymentId = paymentId;
@@ -71,7 +69,7 @@ public class Payment {
             return this;
         }
 
-        public Builder setDate(Date date) {
+        public Builder setDate(String date) {
             this.date = date;
             return this;
         }

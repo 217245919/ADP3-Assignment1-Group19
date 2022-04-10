@@ -6,6 +6,7 @@ package za.ac.cput.domain;
   Lyle Haines (217245919)
   10 April 2022
  */
+
 public class Customer {
 
     private String cusId;
