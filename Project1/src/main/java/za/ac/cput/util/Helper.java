@@ -5,22 +5,22 @@ import java.util.UUID;
 
 public class Helper {
 
-    public static boolean isNullorEmpty(String s) {
-        return(s == null || s.equals("") || s.isEmpty() || s.equalsIgnoreCase("null"));
-    }
     //Bookings Strings
-    static String aString = "0001";
-    static String bString = "#712CPT";
-    static String cString = "#CCT0004";
-    static String dString = "Cape Town Central";
+    static String aString = "0aa00000-a000-00a0-a0a0-00a00aa00a0a";
+    static  String bString = "1bb11111-b111-11b1-b1b1-11b11bb11b1b";
+    static String cString = "2cc22222-c222-22c2-c2c2-22c22cc22c2c";
+
 
     /////////////////
     public static String generateId() {
         return UUID.randomUUID().toString();
     }
-    public static String generatebookingId(){return UUID.nameUUIDFromBytes(aString.getBytes()).toString();}
-    public static String generatebranchId(){return UUID.nameUUIDFromBytes(bString.getBytes()).toString();}
-    public static String generatecustId(){return UUID.nameUUIDFromBytes(cString.getBytes()).toString();}
-    public static String generatbranchLoc(){return UUID.nameUUIDFromBytes(dString.getBytes()).toString();}
-    public static String generateDelBId(){return UUID.randomUUID().toString();}
+    public static String generatebookingId(){return UUID.fromString(aString).toString();}
+    public static String generatebranchId(){return UUID.fromString(bString).toString();}
+    public static String generatecustId(){return UUID.fromString(cString).toString();}
+
+
+    public static boolean isNullorEmpty(String s) {
+        return(s == null || s.equals("") || s.isEmpty() || s.equalsIgnoreCase("null"));
+    }
 }

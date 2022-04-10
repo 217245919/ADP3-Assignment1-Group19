@@ -17,6 +17,8 @@ public class BookingsFactory {
         String bookingId = Helper.generatebookingId();
         String branchId = Helper.generatebranchId();
         String customerId = Helper.generatecustId();
+
+
         Bookings bookings = new Bookings.Builder()
                 .setBookingId(bookingId)
                 .setDate(date)

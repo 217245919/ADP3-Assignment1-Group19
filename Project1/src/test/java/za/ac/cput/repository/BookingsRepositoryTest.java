@@ -54,7 +54,7 @@ class BookingsRepositoryTest {
     void e_delete() {
         boolean success = repository.delete(bookings.getBookingId());
         assertTrue(success);
-        System.out.println("Deleted: " + success);
+        System.out.println("Deleted: " + bookings);
     }
 
     ////////////GetAll
