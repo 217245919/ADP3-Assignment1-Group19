@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class DeliveryBoyRepositoryTest {
     private static DeliveryBoyRepository repository = DeliveryBoyRepository.getRepository();
-    private static DeliveryBoy deliveryBoy = DeliveryBoyFactory.createDeliveryBoy("123456", "Jake", "Evens","091 898 9765");
+    private static DeliveryBoy deliveryBoy = DeliveryBoyFactory.createDeliveryBoy("123456", "Jake", "Evens","0918989765");
     @Test
     void a_create(){
         DeliveryBoy createdDelivery = repository.create(deliveryBoy);
@@ -28,7 +28,7 @@ public class DeliveryBoyRepositoryTest {
 
     @Test
     void c_update(){
-        DeliveryBoy updated = new DeliveryBoy.Builder().copy(deliveryBoy).setDelivBId("123451").build();
+        DeliveryBoy updated = new DeliveryBoy.Builder().copy(deliveryBoy).setDelivBFname("Avo").build();
         assertNotNull(repository.update(updated));
         System.out.println("Updated: " +updated);
     }

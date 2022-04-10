@@ -14,7 +14,7 @@ public class DeliveryBoyFactory {
     public static DeliveryBoy createDeliveryBoy(String delivBId, String delivBFname, String delivBSname, String delivBCellNr){
         DeliveryBoy deliveryBoy= new DeliveryBoy.Builder()
                 .setDelivBId(delivBId)
-		.setDelivBFname(delivBFname)
+		        .setDelivBFname(delivBFname)
                 .setDelivBSname(delivBSname)
                 .setDelivBCellNr(delivBCellNr)
                 .build();
