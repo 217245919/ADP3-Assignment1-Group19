@@ -17,7 +17,7 @@ public class BookingsRepository implements IBookingsRepository{
 
 
     ///////////////////// Perform Singleton
-    private static BookingsRepository getRepository() {
+    public static BookingsRepository getRepository() {
         if (repository == null) {
             repository = new BookingsRepository();
         }
