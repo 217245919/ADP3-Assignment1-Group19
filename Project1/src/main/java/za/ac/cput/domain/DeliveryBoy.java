@@ -19,6 +19,7 @@ public class DeliveryBoy {
     public String getDelivBId() {return this.delivBId;}
     public void setDelivBId(String ID) {this.delivBId = ID;}
     public String getDelivBFname() {return this.delivBFname;}
+    public void setDelivBfname(String name) {this.delivBFname=name;}
     public String getDelivBSname() {return this.delivBSname;}
     public String getDelivBCellNr() {return this.delivBCellNr;}
     public void setDelivBfname(String name) {this.delivBFname=name;}
@@ -27,15 +28,17 @@ public class DeliveryBoy {
    
 
     // To String
+
+
     @Override
     public String toString() {
-        return "DeliveryBoy{"+
+        return "DeliveryBoy{" +
                 "delivBId='" + delivBId + '\'' +
+
                 ", delivBFname="+ delivBFname + '\'' +
                 ", delivBSname='" + delivBSname + '\'' +
                 ", delivBCellNr='"+ delivBCellNr + '\'' +
-                '}';
-    }
+      }
 
     //Builder Set
     public static class Builder{

@@ -22,6 +22,7 @@ public class CarDelivery {
     public void setCustomerId(String ID) {this.customerId = ID;}
     
     // To String
+
     @Override
     public String toString() {
         return  "CarDelivery{"+
@@ -30,6 +31,7 @@ public class CarDelivery {
         ", customerId='"+ customerId + '\'' +
         '}';
 }
+
 
     //Builder Set
     public static class Builder{
