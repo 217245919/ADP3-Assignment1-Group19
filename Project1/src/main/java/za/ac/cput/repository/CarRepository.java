@@ -6,60 +6,43 @@ package za.ac.cput.repository;
     10 April 2022
  */
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.Car;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class CarRepository implements ICarRepository {
-    private static CarRepository repository = null;
-    private Set<Car> carDB=null;
+@Repository
+public class CarRepository implements ICarRepository<Car, String> {
+    private final List<Car> carList;
 
-    public CarRepository() { carDB = new HashSet<Car>();}
-
-    public static CarRepository getRepository(){
-        if (repository == null){
-            repository = new CarRepository();
-        }
-        return repository;
+    public CarRepository() {
+        this.carList = new ArrayList<>();
     }
 
-    @Override
-    public Car create(Car car) {
-        boolean created = carDB.add(car);
-        if (!created)
+    public static CarRepository carRepository() {
         return null;
+    }
+
+    public Car save(Car car) {
+        Optional<Car> read = read(car.getCarRegId());
+        if(read.isPresent()) {
+            delete(read.get());
+        }
+        this.carList.add(car);
         return car;
     }
 
-    @Override
-    public Car read(String carRegId) {
-        for (Car c : carDB)
-            if(c.getCarRegId().equals(carRegId)){
-                return c;
-            }
+    public Optional<Car> read(String id){
+        return this.carList.stream().filter(g -> g.getCarRegId().equalsIgnoreCase(id))
+                .findFirst();
+    }
+
+    public void delete(Car car){
+        this.carList.remove(car);
+    }
+
+
+    public List<Car> findAll() {
         return null;
     }
-
-    @Override
-    public Car update(Car car) {
-        Car oldCar = read(car.getCarRegId());
-        if(oldCar != null){
-            carDB.remove(oldCar);
-            carDB.add(car);
-            return car;
-        }
-        return null;
-    }
-
-    @Override
-    public boolean delete(String carRegId) {
-        Car carToDelete = read(carRegId);
-        if(carToDelete == null)
-            carDB.remove(carToDelete);
-        return true;
-    }
-
-    @Override
-    public Set<Car> getAll() { return carDB;}
 }

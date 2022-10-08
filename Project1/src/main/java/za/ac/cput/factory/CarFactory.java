@@ -13,4 +13,8 @@ public class CarFactory {
                 .build();
         return car;
     }
+
+    public static Car build(String s, String s1) {
+        return null;
+    }
 }

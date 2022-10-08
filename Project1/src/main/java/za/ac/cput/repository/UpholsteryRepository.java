@@ -6,64 +6,45 @@ package za.ac.cput.repository;
     10 April 2022
  */
 
+import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.Upholstery;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
+@Repository
 public class UpholsteryRepository implements IUpholsteryRepository {
-    private static UpholsteryRepository repository = null;
-    private Set<Upholstery> upholsteryDB = null;
+    private final List<Upholstery> upholsteryList;
 
-    public UpholsteryRepository() { upholsteryDB = new HashSet<Upholstery>();}
-
-    public static UpholsteryRepository getRepository(){
-        if(repository == null){
-            repository = new UpholsteryRepository();
-        }
-        return repository;
+    public UpholsteryRepository() {
+        this.upholsteryList = new ArrayList<>();
     }
 
+    public static UpholsteryRepository upholsteryRepository() {
+        return null;
+    }
 
     @Override
-    public Upholstery create(Upholstery upholstery) {
-        boolean created = upholsteryDB.add(upholstery);
-        if(!created)
-            return null;
+    public Upholstery save(Upholstery upholstery) {
+        Optional<Upholstery> read = read(upholstery.getUpholsteryId());
+        if (read.isPresent()) {
+            delete(read.get());
+        }
         return upholstery;
     }
 
     @Override
-    public Upholstery read(String upholsteryId) {
-        for (Upholstery u : upholsteryDB)
-            if(u.getUpholsteryId().equals(upholsteryId)){
-                return u;
-            }
+    public Optional<Upholstery> read(String id) {
+        return this.upholsteryList.stream().filter(g -> g.getUpholsteryId().equalsIgnoreCase(id))
+                .findFirst();
+    }
+
+    @Override
+    public void delete(Upholstery upholstery) {
+        this.upholsteryList.remove(upholstery);
+    }
+
+
+    public List<Upholstery> findAll() {
         return null;
-    }
-
-    @Override
-    public Upholstery update(Upholstery upholstery) {
-        Upholstery oldUpholstery = read(upholstery.getUpholsteryId());
-        if (oldUpholstery !=null){
-            upholsteryDB.remove(oldUpholstery);
-            upholsteryDB.add(upholstery);
-            return upholstery;
-        }
-        return null;
-    }
-
-    @Override
-    public boolean delete(String upholsteryId) {
-        Upholstery upholsteryToDelete = read(upholsteryId);
-        if(upholsteryToDelete == null)
-            return false;
-        upholsteryDB.remove(upholsteryToDelete);
-        return true;
-    }
-
-    @Override
-    public Set<Upholstery> getAll() {
-        return upholsteryDB;
     }
 }

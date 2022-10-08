@@ -14,4 +14,8 @@ public class UpholsteryFactory {
                 .build();
         return upholstery;
     }
+
+    public static Upholstery build(String s, String s1) {
+        return null;
+    }
 }

@@ -1,49 +1,49 @@
 package za.ac.cput.repository;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
+import za.ac.cput.domain.Car;
 import za.ac.cput.domain.Upholstery;
+import za.ac.cput.factory.CarFactory;
 import za.ac.cput.factory.UpholsteryFactory;
+
+import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 
 public class UpholsteryRepositoryTest {
-    private static UpholsteryRepository repository = UpholsteryRepository.getRepository();
-    private static Upholstery upholstery = UpholsteryFactory.createUpholstery("2468", "Seat", "Leather", "Brown");
+    private Upholstery upholstery;
+    private UpholsteryRepository repository;
+
+    @BeforeEach
+    void setUp() {
+        this.upholstery = UpholsteryFactory.build("test-id", "test-car");
+        this.repository = UpholsteryRepository.upholsteryRepository();
+        Upholstery saved = this.repository.save(this.upholstery);
+        assertSame(this.upholstery, saved);
+    }
+
+    @AfterEach
+    void tearDown(){
+        this.repository.delete(this.upholstery);
+        List<Upholstery> upholsteryList = this. repository.findAll();
+        assertEquals(0, upholsteryList.size());
+    }
+
 
     @Test
-    void a_create(){
-        Upholstery created = repository.create(upholstery);
-        assertEquals(created.getUpholsteryId(),upholstery.getUpholsteryId());
-        System.out.println("Created: " + created);
+    void read() {
+        Optional<Upholstery> read = this.repository.read(this.upholstery.getUpholsteryId());
+        assertAll(
+                () -> assertTrue(read.isPresent()),
+                () -> assertSame(this.upholstery,read.get())
+        );
     }
 
     @Test
-    void b_read(){
-        Upholstery read = repository.read(upholstery.getUpholsteryId());
-        assertNotNull(read);
-        System.out.println("Read: "+read);
-    }
-
-    @Test
-    void c_update(){
-        Upholstery updated = new Upholstery.Builder().copy(upholstery).setUpholstColour("Grey").build();
-        assertNotNull(repository.update(updated));
-        System.out.println("Updated: "+updated);
-    }
-
-    @Test
-    void e_delete(){
-        boolean deleted = repository.delete(upholstery.getUpholsteryId());
-        assertTrue(deleted);
-        System.out.println("Deleted: "+deleted);
-    }
-
-    @Test
-    void d_getAll(){
-        System.out.println("Show All: ");
-        System.out.println(repository.getAll());
+    void findAll() {
+        List<Upholstery> upholsteryList = this.repository.findAll();
+        assertEquals(1, upholsteryList.size());
     }
 }

@@ -13,6 +13,8 @@ public class Car {
     private String carModel;
     private String carColour;
 
+    private Car(){}
+
     private Car(Builder builder) {
         this.carRegId = builder.carRegId;
         this.carModel = builder.carModel;
